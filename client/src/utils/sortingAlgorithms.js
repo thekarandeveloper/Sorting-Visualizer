@@ -36,5 +36,17 @@ export const bubbleSort = async (arr, setArray) => {
     return i + 1;
   };
   
+
+  export const mergeSort = async (array, setArray, speed) =>{
+  
+  };
+  export const insertSort = async (array, setArray, speed) =>{
+  
+  };
+  export const heapSort = async (array, setArray, speed) =>{
+  
+  };
+
+
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
   
