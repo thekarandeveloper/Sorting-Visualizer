@@ -27,19 +27,19 @@ const Visualizer = () => {
 
     switch (algorithm) {
       case "bubble":
-        await bubbleSort(array, setArray, arraySpeed);
+        await bubbleSort(array, setArray, arraySpeed - 100);
         break;
       case "quick":
-        await quickSort(array, setArray, arraySpeed);
+        await quickSort(array, setArray, arraySpeed  - 100);
         break;
       case "merge":
-        await mergeSort(array, setArray, arraySpeed);
+        await mergeSort(array, setArray, arraySpeed - 100);
         break;
       case "insetion":
-        await insertSort(array, setArray, arraySpeed);
+        await insertSort(array, setArray, arraySpeed - 100);
         break;
       case "heap":
-        await heapSort(array, setArray, arraySpeed);
+        await heapSort(array, setArray, arraySpeed - 100);
         break;
       default:
         break;
