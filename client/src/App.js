@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Visualizer from './components/Visualizer';
+import Navbar from './components/Navbar';
 function App() {
   return (
-    <div className="App">
+    <div className="h-[80vh]">
+    <Navbar></Navbar>
     <Visualizer />
   </div>
   );

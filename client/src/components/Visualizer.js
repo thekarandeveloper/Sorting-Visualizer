@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { bubbleSort, quickSort } from '../utils/sortingAlgorithms';
-
+import { GrPowerReset } from "react-icons/gr";
 const Visualizer = () => {
     const generateRandomArray = (size) => {
         return Array.from({ length: size }, () => Math.floor(Math.random() * 100));
@@ -22,17 +22,13 @@ const Visualizer = () => {
   };
 
   return (
-    <div>
-      <h1>Sorting Algorithm Visualizer</h1>
-      <div>
-        <button onClick={() => setArray(generateRandomArray(50))} disabled={isSorting}>Generate New Array</button>
-        <button onClick={handleSort} disabled={isSorting}>Sort</button>
-        <select onChange={(e) => setAlgorithm(e.target.value)} value={algorithm} disabled={isSorting}>
-          <option value="bubble">Bubble Sort</option>
-          <option value="quick">Quick Sort</option>
-        </select>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div  className='flex w-full h-full'>
+    
+     <section className='w-[70%] bg-[#ededed] p-8 border rounded-xl'>
+     <div className='w-full flex justify-end'>
+     <button className='border bg-slate-50 rounded-full p-4 border-[#c9c9c9]' onClick={() => setArray(generateRandomArray(50))} disabled={isSorting}><GrPowerReset /></button>
+     </div>
+     
         {array.map((value, index) => (
           <div
             key={index}
@@ -45,7 +41,26 @@ const Visualizer = () => {
             }}
           />
         ))}
+        <div>
+      
       </div>
+      </section>
+      <section className='flex flex-col w-[30%] bg-[#ededed] p-8 border rounded-md justify-between items-center'>
+     
+        
+        <div className='w-full'>
+        <select onChange={(e) => setAlgorithm(e.target.value)} value={algorithm} disabled={isSorting}>
+          <option value="bubble">Bubble Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+        </div>
+       
+        <div className='bottom-0 w-full h-16'>
+        <button className='rounded-md w-[100%] bg-[#2063ff] text-white h-full text-xl font-medium' onClick={handleSort} disabled={isSorting}>Sort</button>
+        </div>
+       
+      </section>
+     
     </div>
   );
 };
